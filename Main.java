@@ -1,10 +1,32 @@
 public class Main{
     public static void main(String [] args){
         System.out.println("hi");
-        int [] data ={5, 7, -3, 6, 1};
-        System.out.println("Selection Sort:");
-        selectionSort(data);
+        int [] data ={9, 2, 3, 1,8};
+        System.out.println("Insertion Sort:");
+        insertionSort(data);
 
+    }
+
+    public static void insertionSort(int [] data){
+        for(int a=1; a<=data.length-1;a++){
+            int temp=data[a];
+            for(int b=a-1;b>=0;b--){
+                if(data[b]>temp){
+                    data[b+1]=data[b];
+                }
+                else{
+                    data[b+1]=temp;
+                    break;
+                }
+                if(b==0){
+                    data[b]=temp;
+                }
+            }
+            
+        }
+        for(int d:data){
+            System.out.print(d+" ");
+        }
     }
 
     public static void selectionSort(int [] data){
